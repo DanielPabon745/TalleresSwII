@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Calculadora</title>
+	<style type="text/css">
+		table, th, td{
+			border: 5px solid #E6DFDF;
+			border-collapse: collapse;
+			align-items: center;
+		}
+		td{
+			opacity: 0.8;
+		}
+		th{
+			padding: 0px;
+		}
+		button{
+			width: 100%;
+			padding: 15px;
+			background-color: white;
+			text-decoration: none;
+		}
+		.color{
+			background-color:  #BBB7B7;
+		}
+		.console{
+			text-align: right;
+			width: 20%;
+			font-size: 18px;
+		}
+	</style>
+	<script type="text/javascript">
+		var number1 = "";
+		var number2 = "";
+		var resultado = "";
+		var bandera = false;
+		var operacion = -1;
+		function escribir(id){
+			if (operacion==0) {
+				limpiar();
+				operacion = -1;
+			}if (!bandera) {
+				number1+=id;
+				mostrar(number1);
+			}else if (bandera) {
+				number2+=id;
+				mostrar(number2);
+			}
+		}
+		function borrarTodo(){
+			number1 = "";
+			number2 = "";
+			mostrar(0);			
+		}
+		function borrarNumero2(){
+			number2 = "";
+			mostrar(0);
+		}
+		function sumar(){
+			bandera = true;
+			operacion = 1;
+			mostrar('');
+		}
+		function restar(){
+			bandera = true;
+			operacion = 2;
+			mostrar('');
+		}
+		function multiplicar(){
+			bandera = true;
+			operacion = 3;
+			mostrar('');
+		}
+		function dividir(){
+			bandera = true;
+			operacion = 4;
+			mostrar('');
+		}
+		function negativo(){
+			resultado = parseInt(number1)*-1;
+			number1 = resultado;
+			mostrar(resultado);	
+			operacion = 0;
+		}
+		function cuadrado(){
+			resultado = parseInt(number1)*parseInt(number1);
+			number1 = resultado;
+			mostrar(resultado);
+			operacion = 0;	
+		}
+		function raiz(){
+			resultado = Math.sqrt(number1);
+			number1 = resultado;
+			mostrar(resultado);
+			operacion = 0;
+		}
+		function inverso(){
+			resultado = 1/parseInt(number1);
+			number1 = resultado;
+			mostrar(resultado);
+			operacion = 0;
+		}
+		function igual(){
+			switch (operacion){
+				case 1:
+					resultado = parseInt(number1)+parseInt(number2);
+					mostrar(resultado);
+					number1 = resultado;
+					number2 = "";
+					bandera = true;
+					operacion = 0;
+				break;
+				case 2:
+					resultado = parseInt(number1)-parseInt(number2);
+					mostrar(resultado);
+					number1 = resultado;
+					number2 = "";
+					bandera = true;
+					operacion = 0;
+				break;
+				case 3:
+					resultado = parseInt(number1)*parseInt(number2);
+					mostrar(resultado);
+					number1 = resultado;
+					number2 = "";
+					bandera = true;
+					operacion = 0;
+				break;
+				case 4:
+					resultado = parseInt(number1)/parseInt(number2);
+					mostrar(resultado);
+					number1 = resultado;
+					number2 = "";
+					bandera = true;
+					operacion = 0;
+				break;
+				case 5:
+					
+				break;
+				default:
+				break;
+			}
+		}
+		function limpiar(){
+			number1 = "";
+			number2 = "";
+			bandera = false;
+			mostrar("0");
+		}
+		function mostrar(mensaje){
+			document.getElementById('Console').value = mensaje;		
+		}
+	</script>
+</head>
+<body>
+	<div align="center">
+	<h1>Calculadora</h1>
+		<input class="console" type="text" value="0" name="Console" id="Console" readonly="readonly">
+		<p></p>
+		<table width="20%">
+			<tr>
+				<td><button class="color" onclick="escribir()" id="Porcentaje">%</button></td>
+				<td><button class="color" onclick="raiz()" id="Raiz">&#8730</button></td>
+				<td><button class="color" onclick="cuadrado()" id="Cuadrado">x&#178</button></td>
+				<td><button class="color" onclick="inverso()" id="Inverso">1/x</button></td>
+			</tr>
+			<tr>
+				<!--td><button class="color" onclick="borrarNumero2()" id="">CE</button></td>-->
+				<td colspan="3"><button class="color" onclick="borrarTodo()" id="borrarTodo">C</button></td>
+				<!--<td><button class="color" onclick="" id="Borrar">Del</button></td>-->
+				<td><button class="color" onclick="dividir()" id="Division">/</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="escribir('7')" id="7">7</button></td>
+				<td><button onclick="escribir('8')" id="8">8</button></td>
+				<td><button onclick="escribir('9')" id="9">9</button></td>
+				<td><button class="color" onclick="multiplicar()" id="X">X</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="escribir('4')" id="4">4</button></td>
+				<td><button onclick="escribir('5')" id="5">5</button></td>
+				<td><button onclick="escribir('6')" id="6">6</button></td>
+				<td><button class="color" onclick="restar()" id="-">-</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="escribir('1')" id="1">1</button></td>
+				<td><button onclick="escribir('2')" id="2">2</button></td>
+				<td><button onclick="escribir('3')" id="3">3</button></td>
+				<td><button class="color" onclick="sumar()" id="+">+</button></td>
+			</tr>
+			<tr>
+				<td><button class="color" onclick="negativo()" id="Pos-Neg">&plusmn</button></td>
+				<td><button onclick="escribir('0')" id="0">0</button></td>
+				<td><button onclick="escribir('.')" id=",">,</button></td>
+				<td><button class="color" onclick="igual()" id="=">=</button></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
