@@ -1,0 +1,16 @@
+logic.AscensorProxy subir2Pisos 21/9/2017-23:34:54:359
+logic.AscensorProxy subir2Pisos 21/9/2017-23:34:54:360
+logic.AscensorProxy subirPiso 21/9/2017-23:34:54:361
+logic.AscensorProxy bajar3Pisos 21/9/2017-23:34:54:362
+logic.AscensorProxy bajar3Pisos 21/9/2017-23:34:54:363
+logic.AscensorProxy bajar3Pisos 21/9/2017-23:34:54:363
+logic.AscensorProxy subirPiso 21/9/2017-23:34:54:364
+logic.AscensorProxy bajar1Piso 21/9/2017-23:34:54:366
+logic.AscensorProxy subir2Pisos 21/9/2017-23:35:24:348
+logic.AscensorProxy subir2Pisos 21/9/2017-23:35:24:349
+logic.AscensorProxy subirPiso 21/9/2017-23:35:24:350
+logic.AscensorProxy bajar3Pisos 21/9/2017-23:35:24:351
+logic.AscensorProxy bajar3Pisos 21/9/2017-23:35:24:352
+logic.AscensorProxy bajar3Pisos 21/9/2017-23:35:24:353
+logic.AscensorProxy subirPiso 21/9/2017-23:35:24:379
+logic.AscensorProxy bajar1Piso 21/9/2017-23:35:24:380
